@@ -1,0 +1,363 @@
+/* Media Query 1170px */
+@media (max-width:1170px) {
+
+    /* General CSS */
+    .section-subtitle {
+        max-width: 60%
+    }
+
+    /* 02 Banner Section */
+    .banner_section_hero .banner-text-box p {
+        width: 80%;
+    }
+
+
+}
+
+/* Media Query 991px */
+@media (max-width:991px) {
+
+    /* General CSS */
+    .about .banner_section,
+    .product .banner_section,
+    .gallery .banner_section,
+    .contact .banner_section {
+        padding-top: 12.5rem;
+        padding-bottom: 3rem;
+    }
+
+    /* 01 Navbar CSS */
+    .header .navbar {
+        background-size: cover;
+        padding: 2rem 5rem;
+    }
+
+    .header .navbar-nav {
+        margin-top: 2rem;
+    }
+
+    .header .navbar-nav .nav-link {
+        padding: .2rem .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .header .header_right span {
+        padding: .2rem .5rem;
+    }
+
+    /* 02 Banner Section */
+
+    .banner_section_hero .banner-img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .banner_section_hero .banner-text-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .banner_section_hero .banner-text-box p {
+        width: 90%;
+    }
+
+    /* 06 Testimonial */
+    .testimonial_section .carousel-indicators {
+        bottom: 40rem;
+    }
+
+    /* 07 Gallery Section */
+    .gallery_section p {
+        margin: 0 auto;
+    }
+
+    .gallery_section .btn {
+        margin: auto auto;
+    }
+}
+
+/* Media Query 767px */
+@media (max-width:767px) {
+
+    /* General CSS */
+    body,
+    html {
+        font-size: 8px;
+    }
+
+    .section-subtitle {
+        max-width: 80%;
+    }
+
+    /* 01 Navbar CSS */
+    .header .navbar {
+        background-size: cover;
+        padding: 5rem 5rem;
+    }
+
+
+    /* 02 Banner Section */
+    .banner_section_hero {
+        min-height: 40vh;
+    }
+
+    .banner_section .carousel-caption {
+        height: fit-content;
+    }
+
+    .banner_section .carousel-item {
+        height: 40vh;
+    }
+
+    .banner_section_hero .banner-img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .banner_section_hero .banner-text-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    /* 07 Gallery Section */
+    .gallery_section p {
+        margin: 0 auto;
+    }
+
+    .gallery_section .btn {
+        margin: auto 0;
+    }
+}
+
+/* Media Query 590px */
+@media (max-width:590px) {
+
+    /* General CSS */
+    body,
+    html {
+        font-size: 7px;
+    }
+
+    /* 01 Navbar CSS */
+    .header .navbar {
+        background-size: cover;
+        padding: 2rem 5rem;
+    }
+
+
+    /* 02 Banner Section */
+    .banner_section_hero {
+        min-height: 35vh;
+    }
+
+    .banner_section .carousel-caption {
+        top: 25%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: left;
+        width: 100%;
+        height: auto;
+        padding: 3rem 5rem 0;
+
+    }
+
+    .banner_section .carousel-caption {
+        height: fit-content;
+    }
+
+    .banner_section .carousel-item {
+        height: 35vh;
+    }
+
+    .banner_section_hero .banner-img {
+        object-fit: cover;
+        object-position: center;
+        height: 600px;
+    }
+
+    .banner_section_hero .banner-text-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .banner_section_hero .banner-text-box h1 {
+        font-size: 6rem;
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .banner_section_hero .banner-text-box p {
+        width: 85%;
+        font-size: 2rem;
+    }
+
+    /* 04 About Section  */
+    .landing_about_section .about-img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .landing_about_section .product-content {
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+
+    /* 03 Features CSS */
+
+    .feature_section h1 {
+        margin-bottom: 5rem;
+    }
+
+    .feature_section .container {
+        padding: 0 5rem;
+    }
+
+    .feature_section .features-box {
+        padding: 5.5rem 0;
+    }
+
+    /* 05 product card design */
+
+    .landing_product_section .product-card .product-img {
+        padding: 1rem 1.5rem 0;
+    }
+
+    .landing_product_section .product-card h3 {
+        font-size: 3rem;
+        margin-bottom: 10rem;
+    }
+
+    .landing_product_section .product-card .product-detail {
+        padding: 5rem 1rem;
+        border-radius: 0;
+    }
+
+    /* 06 Testimonial */
+    .testimonial_section {
+        height: 105vh;
+    }
+
+    .testimonial_section .profile-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .testimonial_section .profile-box img {
+        width: 340px;
+        height: 200px;
+    }
+
+    .testimonial_section .carousel-indicators {
+        bottom: 55rem;
+    }
+
+    .testimonial_section .carousel-indicators button {
+        width: 2rem;
+        height: 2rem;
+        margin: 0 1rem;
+    }
+
+    /* 07 Gallery Section */
+    .gallery_section p,
+    .gallery_section .btn {
+        margin: 0 auto;
+    }
+}
+
+/* Media Query 362px */
+@media (max-width:362px) {
+
+    /* 02 Banner Section */
+    .banner_section_hero {
+        min-height: 35vh;
+    }
+
+    .banner_section_hero .banner-text-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .banner_section_hero .banner-text-box h1 {
+        font-size: 5rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .banner_section_hero .banner-text-box p {
+        width: 85%;
+        font-size: 2rem;
+    }
+
+    /* 03 Features CSS */
+
+    .feature_section h1 {
+        margin-bottom: 5rem;
+        font-size: 5rem;
+    }
+
+    .feature_section .features-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .feature_section .container {
+        padding: 0 5rem;
+    }
+
+    .feature_section .features-box {
+        padding: 4rem 0;
+    }
+
+    /* 05 product card design */
+    .landing_product_section h1 {
+        font-size: 5rem;
+    }
+
+    /* 06 Testimonial */
+    .testimonial_section {
+        height: 100vh;
+    }
+
+    .testimonial_section .carousel-indicators {
+        bottom: 55rem;
+    }
+
+    .testimonial_section .profile-box img {
+        width: 270px;
+        height: 180px;
+    }
+
+    .testimonial_section .card {
+        padding: 5rem 2rem 2rem 0;
+
+    }
+
+    /* 07 Gallery Section */
+    .gallery_section p {
+        margin: 0 auto;
+    }
+}

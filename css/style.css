@@ -1,0 +1,1026 @@
+/* ---------- Normal ---------- */
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* ---------- Italic ---------- */
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+body,
+html {
+    font-family: 'Kanit' !important;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+:root {
+    /* Background Color */
+    --bg-white: #fff;
+    --bg-dark-color: rgb(10, 10, 10);
+
+    /* Text Colors */
+    --primary-text: #6B0405;
+    --secondary-color: #A4161A;
+    --light-color: #e6e6e6;
+    --dark-color: #1f1f1f;
+    --text-white: #fff;
+    --text-gray: #dee2e6;
+    --anchor-color: #007aff;
+
+}
+
+
+embed,
+iframe,
+img,
+object {
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+button {
+    text-decoration: none;
+    outline: 0;
+}
+
+li a {
+    color: var(--text-white);
+}
+
+a:hover,
+button:hover {
+    -webkit-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #A4161A;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.about .banner_section,
+.product .banner_section,
+.gallery .banner_section,
+.contact .banner_section {
+    background-image: url(../images/banner-slide/banner-all.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+    min-height: auto;
+}
+
+/* 01 navbar css */
+.header {
+    position: fixed;
+    width: 100%;
+    top: -.3rem;
+    left: 0;
+    z-index: 99999;
+}
+
+.header .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header .navbar {
+    background: url(../images/header-bg.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 0 7rem;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, .7);
+}
+
+.header .navbar-brand {
+    width: 16rem;
+    margin: 1rem 0;
+}
+
+.header .navbar-nav .nav-link {
+    color: var(--text-white);
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: .5rem 2rem;
+    margin: 0 1rem;
+}
+
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-link.active {
+    color: #ff242c;
+}
+
+.header .navbar-toggler {
+    color: var(--text-white);
+    font-size: 2rem;
+    height: 2.7rem;
+    padding: 0;
+}
+
+.header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.header .header_right span {
+    color: #ff242c;
+    display: block;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    margin-bottom: -.5rem;
+}
+
+.header .header_right .phone_no {
+    color: var(--text-white);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* 02 Banner Section*/
+.banner_section {
+    background-color: #660708;
+    min-height: 90vh;
+}
+
+.banner_section h1 {
+    color: #fff;
+    font-size: 9rem;
+    font-weight: 600;
+}
+
+/* 02 Banner Section hero */
+.banner_section_hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #450102;
+}
+
+.banner_section_hero .carousel-item {
+    width: 100%;
+    height: 100vh;
+}
+
+.banner_section_hero .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 🔽 กล่องข้อความด้านล่าง */
+.banner_section_hero .banner-text-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: url(../images/banner-slide/banner-title.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    text-align: center;
+    z-index: 10;
+    padding: 2rem 0 2rem;
+}
+
+.banner_section_hero .banner-text-box h1 {
+    color: #fff;
+    font-size: 4.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.banner_section_hero .banner-text-box p {
+    color: #fff;
+    font-size: 1.8rem;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+/* 04 About Section  */
+.landing_about_section {
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+    /* ลบ height 70vh ออก */
+    padding: 3rem 0;
+    /* ใส่ padding แทนให้มีระยะบนล่าง */
+}
+
+.landing_about_section .about-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.landing_about_section .product-content h2,
+.landing_about_section .product-details h4,
+.landing_about_section .product-details p {
+    color: #6B0405;
+}
+
+.landing_about_section .product-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.landing_about_section .product-details h4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+
+}
+
+.landing_about_section .product-details p {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: #0B090A;
+}
+
+.landing_about_section .btn {
+    color: var(--bg-white);
+    background: #6B0405;
+    border: .3rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    padding: 1rem 3.5rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 4rem auto 0;
+    letter-spacing: .2rem;
+    width: fit-content;
+}
+
+
+.landing_about_section .btn:hover {
+    background: var(--bg-white);
+    color: #6B0405;
+    border: .3rem solid #6B0405;
+}
+
+/* 03 Features CSS */
+.feature_section {
+    background-image: url(../images/feature-icon/feature-1.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.feature_section a {
+    text-decoration: none;
+}
+
+.feature_section h1 {
+    color: #fff;
+    font-size: 6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4.5rem;
+}
+
+.feature_section .features-box {
+    background-color: #fff;
+    border: .5rem solid #0B090A;
+    padding: 8rem 0;
+    transition: all .3s;
+}
+
+.feature_section .features-box .features-icon {
+    height: 6.5rem;
+    width: 6.5rem;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature_section .features-box .features-icon img {
+    width: 3.7rem;
+}
+
+.feature_section .features-box h3 {
+    margin-top: 2rem;
+    color: #0B090A;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.feature_section .features-box:hover {
+    background-color: #6B0405;
+    border-color: #fff;
+}
+
+.feature_section .features-box:hover h3 {
+    color: var(--text-white);
+}
+
+.feature_section .features-box:hover .features-icon {
+    background-color: #fff;
+}
+
+.feature_section .features-box:hover .features-icon-border {
+    border-color: #fff;
+}
+
+
+
+
+/* 05 product card design */
+.landing_product_section {
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+}
+
+.landing_product_section h1 {
+    color: #6B0405;
+    font-size: 6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.landing_product_section p {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto 2.5rem;
+}
+
+.landing_product_section .product-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: .3rem solid #fff;
+    border-radius: 5px;
+    padding: 2rem 1rem;
+    transition: all .3s;
+    height: 100%;
+    margin: 0 1rem;
+    background-image: url(../images/achievement/achievement-bg.jpg);
+    background-size: cover;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+}
+
+.landing_product_section .product-card .product-img {
+    margin-bottom: 7rem;
+    text-align: center;
+    padding: 0 .5rem;
+}
+
+.landing_product_section .product-card h3 {
+    color: #fff;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-top: -4rem;
+    margin-left: 1rem;
+    margin-bottom: 6rem;
+}
+
+.landing_product_section .product-card .product-detail {
+    position: absolute;
+    bottom: -22rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 4.25rem 1rem;
+    background-color: #0B090A;
+    transition: all .5s ease;
+}
+
+.landing_product_section .product-card .product-detail .btn {
+    position: relative;
+    color: var(--bg-white);
+    background: #6B0405;
+    z-index: 1;
+    overflow: hidden;
+    border: .2rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin: 1.5rem auto 0;
+    letter-spacing: .2rem;
+    width: fit-content;
+}
+
+
+.landing_product_section .product-card .product-detail .btn:hover {
+    background: var(--bg-white);
+    color: #6B0405;
+    border: .2rem solid #6B0405;
+}
+
+
+.landing_product_section .product-card:hover .product-detail {
+    bottom: 0;
+}
+
+
+
+
+
+/* 06 Testimonial */
+.testimonial_section {
+    background-image: url(../images/activites/activity-bg.jpg);
+    background-size: cover;
+    background-position: top;
+    height: 85vh;
+}
+
+.testimonial_section h1 {
+    color: #fff;
+    font-size: 6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.testimonial_section .section-subtitle {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto 2.5rem;
+}
+
+.testimonial_section p {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 auto 2.5rem;
+}
+
+.testimonial_section .carousel-indicators {
+    bottom: 40rem;
+}
+
+.testimonial_section .carousel-indicators button {
+    background-color: #fff;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.testimonial_section .card {
+    background: url(../images/testimonial/testimonial-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: right;
+    padding: 5rem 5rem 5rem 0;
+    border-radius: 0 .5rem .5rem 0;
+    border: .1rem solid transparent;
+
+}
+
+.testimonial_section .profile-box {
+    padding: 1.875rem;
+    background-color: #0B090A;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.testimonial_section .profile-box img {
+    border-radius: .625rem 3.125rem;
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.testimonial_section .card {
+    padding: 1.875rem auto;
+    background-color: #0B090A;
+}
+
+.testimonial_section .desc-box {
+    padding-left: 2.5rem;
+}
+
+.testimonial_section .desc-box h3 {
+    color: #fff;
+    font-size: 4rem;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+}
+
+
+/* 07 Galley CSS */
+.gallery_section {
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+}
+
+.gallery_section .text-box {
+    text-align: center;
+}
+
+.gallery_section h2 {
+    color: #6B0405;
+    font-size: 6rem;
+    font-weight: 600;
+
+}
+
+.gallery_section p {
+    color: #0B090A;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.gallery_section .btn {
+
+    position: relative;
+    color: var(--bg-white);
+    background: #6B0405;
+    z-index: 1;
+    overflow: hidden;
+    border: .3rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 4rem auto 0;
+    letter-spacing: .2rem;
+    width: fit-content;
+}
+
+.gallery_section .btn:hover {
+    background: var(--bg-white);
+    color: #6B0405;
+    border: .3rem solid #6B0405;
+}
+
+
+.gallery_section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .5);
+    border: .5rem solid #fff;
+}
+
+
+/* 08 Fotter CSS */
+.footer_wrapper {
+    background-image: url(../images/footer/footer-1.jpg);
+    background-position: bottom;
+    background-size: cover;
+    padding-top: 15rem;
+    padding-bottom: 0;
+}
+
+.footer_wrapper h5 {
+    color: var(--text-white);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer_wrapper ul li {
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+.footer_wrapper ul li a {
+    text-decoration: none;
+}
+
+.footer_wrapper .company_details {
+    font-size: 1.4rem;
+}
+
+.footer_wrapper .contact-info li a {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+}
+
+.footer_wrapper .link-widget li a,
+.footer_wrapper p {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+    -webkit-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s;
+}
+
+.footer_wrapper .link-widget li a::before {
+    content: '\f105';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: .3rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.footer_wrapper .link-widget li a:hover {
+    margin-left: .625rem;
+    color: var(--secondary-color);
+}
+
+.footer_wrapper .social-network a {
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.2rem;
+    margin: .5rem;
+    display: inline-block;
+    border: .125rem solid var(--text-gray);
+    color: var(--text-gray);
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 100%;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.footer_wrapper .social-network a:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-white);
+    box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0 /10%);
+    transform: translateY(-.1875rem);
+}
+
+.footer_wrapper .form-control {
+    font-size: 2rem;
+    color: var(--text-white);
+}
+
+.footer_wrapper .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--secondary-color);
+}
+
+.footer_wrapper .copyright-section {
+    background-color: #6B0405;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.footer_wrapper .copyright-section p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 3rem 0;
+    line-height: 0;
+}
+
+.footer_wrapper .copyright-section a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* ========================
+09 About Page CSS
+==========================*/
+.about_section {
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+}
+
+.about_section img {
+    width: 500px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    display: block;
+    margin: 0 auto;
+}
+
+.about_section .about-details h1 {
+    color: #660708;
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.about_section p {
+    color: #0B090A;
+    font-size: 1.8rem;
+}
+
+/* ========================
+10 Product Page CSS
+==========================*/
+.product-page {
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+    color: #0B090A;
+}
+
+.product-page .row.align-items-center {
+    align-items: flex-start !important;
+}
+
+.product-page .section-title {
+    color: #6B0405;
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+.product-page h2 {
+    color: #6B0405;
+}
+
+.product-page p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    width: 80%;
+}
+
+.product-page img {
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.product-page .btn {
+    color: var(--bg-white);
+    background: #6B0405;
+    border: .3rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    padding: 1rem 3.5rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 4rem auto 0;
+    letter-spacing: .2rem;
+    width: fit-content;
+}
+
+
+.product-page .btn:hover {
+    background: var(--bg-white);
+    color: #6B0405;
+    border: .3rem solid #6B0405;
+}
+
+
+.product .product-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.product .product-details h4 {
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.product .product-details p {
+    margin-bottom: 1.5rem;
+}
+
+/* ========================
+11 Contact Page CSS
+==========================*/
+.contact-page {
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+}
+
+.contact-page .row.align-items-center {
+    align-items: flex-start !important;
+}
+
+.contact-page .section-title {
+    color: #6B0405;
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+.contact-page .section-subtitle {
+    color: #0B090A;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contact-page img {
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.contact-page h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #660708;
+}
+
+.contact-page p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #0B090A;
+}
+
+/* ========================
+12 Gallery Page CSS
+==========================*/
+.gallery-page {
+    background-image: linear-gradient(to bottom, rgb(236, 236, 236), rgb(219, 219, 219));
+}
+
+.gallery-page .row.align-items-center {
+    align-items: flex-start !important;
+}
+
+.gallery-page .section-title {
+    color: #6B0405;
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+.gallery-page .section-subtitle {
+    color: #0B090A;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.gallery-page img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    border: .5rem solid #fff;
+    border-radius: 15px;
+}
+
+.gallery-page h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #660708;
+}
+
+.gallery-page p {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #0B090A;
+}

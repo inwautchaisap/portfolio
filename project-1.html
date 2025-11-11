@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กล้องตรวจจับใบหน้า</title>
+
+    <!-- CSS ของเว็บ -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/lightbox.css">
+
+    <!-- Face Mesh style -->
+    <style>
+        #wrap {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16/9;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scaleX(-1);
+            display: block;
+        }
+
+        canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: block;
+        }
+
+        .btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5rem;
+        }
+
+        .btn {
+            color: var(--bg-white);
+            background: #6B0405;
+            border: .3rem solid var(--bg-white);
+            border-radius: 3.5rem;
+            padding: 1rem 3.5rem;
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin: 4rem auto 0;
+            letter-spacing: .2rem;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background: var(--bg-white);
+            color: #6B0405;
+            border: .3rem solid #6B0405;
+        }
+    </style>
+
+    <!-- FaceMesh Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+
+<body class="gallery">
+
+    <!-- Navbar Section Start -->
+    <header id="full_nav">
+        <div class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <i class="fas fa-stream navbar-toggler-icon"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">หน้าหลัก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">แรงบันดาลใจ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="project.html">โปรเจกต์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="achievement.html">ความสำเร็จ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="certificate.html">เกียรติบัตร</a>
+                            </li>
+
+                        </ul>
+                        <div class="header_right">
+                            <div class="text lg-end">
+                                <span>ติดต่อผม</span>
+                                <span class="phone_no">autchaisap@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar Section Exit -->
+
+    <!-- Banner -->
+    <section class="banner_section">
+        <div class="container">
+            <div class="banner-content">
+                <h1>กล้องตรวจจับใบหน้า</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canvas Section Start -->
+    <section class="camera_section">
+        <div id="wrap">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="overlay"></canvas>
+        </div>
+
+    </section>
+    <div class="btn-container">
+        <a href="project.html" class="btn">ย้อนกลับ</a>
+    </div>
+
+    <!-- Canvas Section Exit -->
+
+    <!-- Footer -->
+    <section class="footer_wrapper mb-md-0" id="contact">
+        <div class="container px-5 px-lg-0">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+                    <h5>ช่องทางการติดต่อ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-phone"></i>+66 90 891 5187</a></li>
+                        <li><a href="#"><i class="fa fa-envelope me-3"></i>autchaisap@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+                    <h5>Social Media</h5>
+                    <ul class="social-network d-flex align-items-center p-0">
+                        <li><a href="https://www.facebook.com/attthep101" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/th.ppa.th/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright-section">
+            <p>Copyright <a href="#">&copy; THEPPATHUD CHAISAP</a> All Rights Reserved</p>
+        </div>
+    </section>
+
+    <!-- ✅ ใส่สคริปต์ตรวจจับใบหน้าไว้ล่างสุด -->
+    <script>
+        (async () => {
+            const video = document.getElementById('webcam');
+            const canvas = document.getElementById('overlay');
+            const ctx = canvas.getContext('2d');
+
+            let smileBaseline = null;
+            let lastNextAt = 0;
+            let smileCount = 0, browCount = 0;
+            let lastTilt = 0;
+
+            // เพิ่ม smoothing และ cooldown
+            const STABLE_FRAMES = 5;
+            let smileStableFrames = 0;
+            let browStableFrames = 0;
+            const FACE = { leftMouth: 61, rightMouth: 291, upperLip: 13, lowerLip: 14, leftEyeOuter: 33, rightEyeOuter: 263, leftBrow: 70, rightBrow: 300, leftCheek: 234, rightCheek: 454 };
+
+            function dist(a, b) {
+                const dx = a.x - b.x, dy = a.y - b.y;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+
+
+
+            function dprScale() {
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = Math.floor(canvas.clientWidth * dpr);
+                canvas.height = Math.floor(canvas.clientHeight * dpr);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            window.addEventListener('resize', dprScale);
+            video.addEventListener('loadeddata', dprScale);
+
+            const faceMesh = new FaceMesh({
+                locateFile: (f) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${f}`
+            });
+            faceMesh.setOptions({
+                maxNumFaces: 1,
+                refineLandmarks: true,
+                minDetectionConfidence: 0.75,
+                minTrackingConfidence: 0.75
+            });
+            faceMesh.onResults(onResults);
+
+            const camera = new Camera(video, {
+                onFrame: async () => {
+                    await faceMesh.send({ image: video });
+                },
+                width: 1280,
+                height: 720
+            });
+
+            await camera.start()
+                .then(() => alert("📸 กล้องกำลังทำงานอยู่"))
+                .catch(() => alert("❌ เปิดกล้องไม่สำเร็จ"));
+
+            navigator.mediaDevices.ondevicechange = () => {
+                if (!video.srcObject) alert("🔒 กล้องถูกปิดแล้ว");
+            };
+
+            const SMILE_THRESHOLD = 0.07;
+            const BROW_RAISE_THRESHOLD = 0.025;
+            const NEXT_COOLDOWN_MS = 1500;
+
+
+
+            function onResults(results) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                if (!results.multiFaceLandmarks || results.multiFaceLandmarks.length === 0) {
+                    drawTextOverlay("ไม่พบใบหน้า");
+                    return;
+                }
+
+                const lm = results.multiFaceLandmarks[0];
+                const leftMouth = lm[FACE.leftMouth],
+                    rightMouth = lm[FACE.rightMouth],
+                    upperLip = lm[FACE.upperLip],
+                    lowerLip = lm[FACE.lowerLip];
+                const leftEye = lm[FACE.leftEyeOuter],
+                    rightEye = lm[FACE.rightEyeOuter],
+                    leftBrow = lm[FACE.leftBrow],
+                    rightBrow = lm[FACE.rightBrow];
+                const leftCheek = lm[FACE.leftCheek],
+                    rightCheek = lm[FACE.rightCheek];
+
+                const faceWidth = dist(leftCheek, rightCheek);
+                const mouthWidth = dist(leftMouth, rightMouth);
+                const mouthOpen = dist(upperLip, lowerLip);
+                const browAvg = ((leftEye.y - leftBrow.y) + (rightEye.y - rightBrow.y)) / 2;
+
+                // --- เก็บค่า baseline ---
+                if (!smileBaseline) {
+                    smileBaseline = { mouthWidth, mouthOpen, brow: browAvg, faceWidth, _frames: 1 };
+                    drawMeshAndText(lm, 'Calibrating...');
+                    return;
+                } else if (smileBaseline._frames < 15) {
+                    const n = smileBaseline._frames;
+                    smileBaseline.mouthWidth = (smileBaseline.mouthWidth * n + mouthWidth) / (n + 1);
+                    smileBaseline.mouthOpen = (smileBaseline.mouthOpen * n + mouthOpen) / (n + 1);
+                    smileBaseline.brow = (smileBaseline.brow * n + browAvg) / (n + 1);
+                    smileBaseline.faceWidth = (smileBaseline.faceWidth * n + faceWidth) / (n + 1);
+                    smileBaseline._frames++;
+                    drawMeshAndText(lm, 'Calibrating...');
+                    return;
+                }
+
+                // --- ตรวจระยะกล้อง ---
+                const nearThreshold = smileBaseline.faceWidth * 1.25; // ใกล้เกินไป
+                const farThreshold = smileBaseline.faceWidth * 0.75;  // ไกลเกินไป
+
+                let distanceNote = '';
+                let borderColor = 'rgba(34,197,94,0.8)';
+                let isInRange = true;
+
+                if (faceWidth > nearThreshold) {
+                    distanceNote = '📏 ใกล้เกินไป — ถอยออก';
+                    borderColor = 'rgba(239,68,68,0.8)';
+                    isInRange = false;
+                } else if (faceWidth < farThreshold) {
+                    distanceNote = '📏 ไกลเกินไป — ขยับเข้าใกล้';
+                    borderColor = 'rgba(239,68,68,0.8)';
+                    isInRange = false;
+                } else {
+                    distanceNote = '✅ ระยะพอดี';
+                    borderColor = 'rgba(34,197,94,0.8)';
+                    isInRange = true;
+                }
+
+                // --- ตรวจจับยิ้ม / ยักคิ้ว (เฉพาะตอนอยู่ในระยะพอดีเท่านั้น) ---
+                if (isInRange) {
+                    const smileRatio = (mouthWidth - smileBaseline.mouthWidth) / smileBaseline.mouthWidth;
+                    const browRatio = (browAvg - smileBaseline.brow) / Math.abs(smileBaseline.brow || 1);
+
+                    if (smileRatio > SMILE_THRESHOLD && mouthOpen < 0.06) {
+                        smileStableFrames++;
+                        if (smileStableFrames >= STABLE_FRAMES && !window._smileTriggered) {
+                            window._smileTriggered = true;
+                            smileCount++;
+                            setTimeout(() => window._smileTriggered = false, 700);
+                            smileStableFrames = 0;
+                        }
+                    } else {
+                        smileStableFrames = 0;
+                    }
+
+                    if (browRatio > BROW_RAISE_THRESHOLD) {
+                        browStableFrames++;
+                        const now = performance.now();
+                        if (browStableFrames >= STABLE_FRAMES && now - lastNextAt > NEXT_COOLDOWN_MS) {
+                            lastNextAt = now;
+                            browCount++;
+                            browStableFrames = 0;
+                        }
+                    } else {
+                        browStableFrames = 0;
+                    }
+                }
+
+                drawMeshAndText(lm, distanceNote, borderColor);
+            }
+
+
+
+            function drawMeshAndText(landmarks, note, borderColor = 'rgba(34,197,94,0.8)') {
+                const w = canvas.clientWidth;
+                const h = canvas.clientHeight;
+                ctx.save();
+
+                const dpr = window.devicePixelRatio || 1;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                // เส้นหน้าทั้งหมด
+                ctx.lineWidth = Math.max(1, Math.floor(h * 0.0025));
+                ctx.strokeStyle = 'rgba(124,58,237,1)';
+                ctx.beginPath();
+                for (let i = 0; i < landmarks.length - 1; i++) {
+                    const a = { x: w - landmarks[i].x * w, y: landmarks[i].y * h };
+                    const b = { x: w - landmarks[i + 1].x * w, y: landmarks[i + 1].y * h };
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                }
+                ctx.stroke();
+
+                // จุดสำคัญ
+                ctx.fillStyle = 'rgba(34,197,94,1)';
+                const important = [FACE.leftMouth, FACE.rightMouth, FACE.leftEyeOuter, FACE.rightEyeOuter, FACE.leftBrow, FACE.rightBrow];
+                for (const idx of important) {
+                    if (landmarks[idx]) {
+                        const p = { x: w - landmarks[idx].x * w, y: landmarks[idx].y * h };
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, Math.max(3, Math.floor(h * 0.006)), 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                ctx.restore(); // ปรับ transform ให้ text และกรอบ
+
+                // 🔲 กรอบรอบจอ
+                ctx.save();
+                ctx.lineWidth = 8;
+                ctx.strokeStyle = borderColor;
+                ctx.strokeRect(0, 0, w, h);
+                ctx.restore();
+
+                drawTextOverlay(note);
+            }
+
+
+
+            function drawTextOverlay(note = '') {
+                const w = canvas.clientWidth, h = canvas.clientHeight;
+                const fontSize = Math.max(16, Math.floor(h * 0.04));
+                ctx.save();
+                ctx.font = `600 ${fontSize}px sans-serif`;
+                ctx.fillStyle = 'rgba(0,0,0,0.5)';
+                ctx.fillRect(10, 10, 260, 100);
+                ctx.fillStyle = '#fff';
+                ctx.fillText(`😊 การยิ้ม: ${smileCount}`, 20, 40);
+                ctx.fillText(`👁️ การยักคิ้ว: ${browCount}`, 20, 70);
+                if (note) ctx.fillText(note, 20, 100);
+                ctx.restore();
+            }
+
+            dprScale();
+        })();
+    </script>
+
+    <!-- Linking Jquery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- Linking Bootstrap 5 for Js -->
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Linking Lightbox popup for Js -->
+    <script src="js/lightbox.js"></script>
+
+    <!-- Linking custom Js -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

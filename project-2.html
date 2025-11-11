@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATBOT</title>
+
+    <!-- CSS ของเว็บ -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/lightbox.css">
+
+    <style>
+        /* --- Chatbot CSS --- */
+        .chatbot_section {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            /* ความสูง fixed */
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            word-wrap: break-word;
+            /* ขึ้นบรรทัดใหม่เมื่อข้อความยาว */
+        }
+
+        .message {
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: inline-block;
+            clear: both;
+            padding: 8px 12px;
+            border-radius: 15px;
+            max-width: 80%;
+            word-break: break-word;
+        }
+
+        .user {
+            float: right;
+            background-color: #6b0405;
+            color: #fff;
+            text-align: right;
+            font-size: 1.6rem;
+        }
+
+        .bot {
+            float: left;
+            background-color: #eee;
+            color: #000;
+            text-align: left;
+            font-size: 1.6rem;
+        }
+
+        .input-area {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 1.6rem;
+        }
+
+        .input-area button {
+            background: #6b0405;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.6rem;
+        }
+
+        /* scrollbar สวยๆ */
+        .messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .messages::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        .btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5rem;
+        }
+
+        .btn {
+            color: var(--bg-white);
+            background: #6B0405;
+            border: .3rem solid var(--bg-white);
+            border-radius: 3.5rem;
+            padding: 1rem 3.5rem;
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin: 4rem auto 0;
+            letter-spacing: .2rem;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background: var(--bg-white);
+            color: #6B0405;
+            border: .3rem solid #6B0405;
+        }
+    </style>
+</head>
+
+<body class="gallery">
+
+    <!-- Navbar Section Start -->
+    <header id="full_nav">
+        <div class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <i class="fas fa-stream navbar-toggler-icon"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">หน้าหลัก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">แรงบันดาลใจ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="project.html">โปรเจกต์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="achievement.html">ความสำเร็จ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="certificate.html">เกียรติบัตร</a>
+                            </li>
+
+                        </ul>
+                        <div class="header_right">
+                            <div class="text lg-end">
+                                <span>ติดต่อผม</span>
+                                <span class="phone_no">autchaisap@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar Section Exit -->
+
+    <!-- Banner -->
+    <section class="banner_section">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Chatbot</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Section Start -->
+    <section class="chatbot_section">
+        <div class="chat-container">
+            <div class="messages" id="messages"></div>
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="พิมพ์ข้อความ..." />
+                <button onclick="sendMessage()">ส่ง</button>
+            </div>
+        </div>
+    </section>
+    <div class="btn-container">
+        <a href="project.html" class="btn">ย้อนกลับ</a>
+    </div>
+    <!-- Chatbot Section End -->
+
+    <!-- Footer -->
+    <section class="footer_wrapper mb-md-0" id="contact">
+        <div class="container px-5 px-lg-0">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+                    <h5>ช่องทางการติดต่อ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-phone"></i>+66 90 891 5187</a></li>
+                        <li><a href="#"><i class="fa fa-envelope me-3"></i>autchaisap@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+                    <h5>Social Media</h5>
+                    <ul class="social-network d-flex align-items-center p-0">
+                        <li><a href="https://www.facebook.com/attthep101" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/th.ppa.th/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright-section">
+            <p>Copyright <a href="#">&copy; THEPPATHUD CHAISAP</a> All Rights Reserved</p>
+        </div>
+    </section>
+
+    <!-- JS สำหรับ Chatbot -->
+    <script>
+        const messages = document.getElementById('messages');
+        const input = document.getElementById('userInput');
+
+        const replies = {
+            "สวัสดี": "สวัสดีครับ!",
+            "ทำไมถึงอยากเข้าคณะวิศวกรรมศาสตร์": "เพราะมันเป็นความฝันของผมมาตั้งแต่เด็กแล้วล่ะครับ!",
+            "ชื่ออะไร": "เราเป็น Chatbot Portfolio ของเทป",
+            "ทำอะไรได้บ้าง": "เราตอบคำถามง่าย ๆ แนะนำ portfolio และโชว์แรงบันดาลใจเกี่ยวกับ AI 😎",
+            "แรงบันดาลใจ": "แรงบันดาลใจของเราคือการเรียนรู้และสร้างสิ่งใหม่ ๆ",
+            "ผลงาน": "ลองดูหน้า Project ของเรา มีหลายโปรเจกต์ที่น่าสนใจ!",
+            "ชอบอะไร": "เราชอบออกแบบเว็บและทดลองพัฒนา AI เล่นเกมก็ชอบ 😆",
+            "เรียนอะไร": "เราเรียนวิศวกรรมศาสตร์และสนใจด้าน AI 🤖"
+        };
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.classList.add('message', sender);
+            div.textContent = text;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        async function getReply(text) {
+            const lowerText = text.toLowerCase();
+            for (let key in replies) {
+                if (lowerText.includes(key)) return replies[key];
+            }
+            return "ขอโทษนะครับ ผมยังไม่ค่อยเก่งเท่าไหร่ ยังตอบกลับคำนี้ไม่ได้นะครับ";
+        }
+
+        async function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            input.value = '';
+            const reply = await getReply(text);
+            addMessage(reply, 'bot');
+        }
+
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // เริ่มแชทด้วยข้อความต้อนรับ
+        addMessage("สวัสดีครับ ผมชื่อ นายเทพทัด ชัยทรัยพ์ เป็น Bot นะครับ!", "bot");
+        addMessage("อยากคุยกับผมลองพิมพ์ตามนี้ดูนะครับ", "bot");
+        addMessage("-ทำไมถึงอยากเข้าคณะวิศวกรรมศาสตร์", "bot");
+    </script>
+
+    <!-- Linking Jquery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- Linking Bootstrap 5 for Js -->
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Linking Lightbox popup for Js -->
+    <script src="js/lightbox.js"></script>
+
+    <!-- Linking custom Js -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
